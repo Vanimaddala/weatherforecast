@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Monitoring System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Weather Monitoring System</h1>
+
+    <div class="container">
+        <!-- Daily Weather Summary -->
+        <h2>Daily Weather Summary</h2>
+        <div id="daily-summary" class="card">
+            <p>No data available for daily summary.</p>
+        </div>
+
+        <!-- Current Weather Conditions -->
+        <h2>Current Weather Conditions</h2>
+        <div id="current-weather" class="card">
+            <p>No data available for current weather conditions.</p>
+        </div>
+
+        <!-- Alerts -->
+        <h2>Alerts</h2>
+        <div id="alerts" class="card">
+            <p>No alerts to display.</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // This function simulates fetching data and displaying titles
+            function fetchWeatherData() {
+                // Simulate an error or no data for demonstration
+                const hasError = false; // Change to true to simulate error
+
+                if (hasError) {
+                    // Show only titles
+                    $('#daily-summary p').text('No data available for daily summary.');
+                    $('#current-weather p').text('No data available for current weather conditions.');
+                    $('#alerts p').text('No alerts to display.');
+                } else {
+                    // Display your data logic here
+                    $('#daily-summary p').text('Here will be the daily weather summary.');
+                    $('#current-weather p').text('Current temperature: 25°C, Condition: Clear');
+                    $('#alerts p').text('No alerts to display.');
+                }
+            }
+
+            fetchWeatherData(); // Call the function to fetch data
+        });
+    </script>
+</body>
+</html>

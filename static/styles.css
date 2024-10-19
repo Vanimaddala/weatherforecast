@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+    overflow: hidden;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease;
+}
+
+.card {
+    margin: 20px 0;
+    padding: 15px;
+    border: 2px solid #74ebd5;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: #acb6e5;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #74ebd5;
+    padding-bottom: 10px;
+}
+
+p {
+    color: #555;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
