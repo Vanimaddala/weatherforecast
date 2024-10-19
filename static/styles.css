@@ -1,70 +1,148 @@
-body {
+/* Reset some default browser styles */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
-    overflow: hidden;
-    animation: gradientAnimation 10s ease infinite;
+    background: linear-gradient(to right, #74ebd5, #acb6e5); /* Gradient background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+/* Container for main content */
+.container {
+    background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 700px;
+    animation: fadeIn 0.5s; /* Animation for container */
 }
 
+/* Heading styles */
 h1 {
     text-align: center;
-    color: white;
-    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #2c3e50; /* Darker color for heading */
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    animation: fadeIn 1s ease;
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-.card {
-    margin: 20px 0;
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+select {
     padding: 15px;
-    border: 2px solid #74ebd5;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    transition: border-color 0.3s; /* Transition effect for border */
+}
+
+select:focus {
+    border-color: #2980b9; /* Darker shade on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+button {
+    padding: 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s; /* Transition effect for button */
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Styles for displaying weather data */
+.city-weather {
+    margin-top: 30px;
+}
+
+.city-card {
+    background: #f9f9f9;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    transition: transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s; /* Transition effect for card */
 }
 
-.card:hover {
-    transform: scale(1.05);
-    border-color: #acb6e5;
+.city-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
-h2 {
-    color: #333;
-    border-bottom: 2px solid #74ebd5;
-    padding-bottom: 10px;
+.city-card h2 {
+    color: #2980b9; /* Color for city name */
+    font-size: 1.8em;
+    margin-bottom: 10px;
 }
 
-p {
-    color: #555;
+.city-card p {
+    font-size: 1.2em;
+    margin: 5px 0;
 }
 
-/* Fade-in Animation */
+/* Error message styles */
+.error {
+    color: #e74c3c; /* Bright red for errors */
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Animation keyframes */
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(-20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
     }
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+
+    select {
+        font-size: 1em;
+    }
